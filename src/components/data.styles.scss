@@ -1,0 +1,29 @@
+.header-data{
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //border: 1px solid red;
+}
+
+.header-day{
+    //border: 1px solid red;
+    font-size: 2.5rem;
+    flex-basis: 2.8vw;
+}
+.header-month{
+    display: flex;
+    flex-direction: column;
+    //border: 1px solid teal;
+    flex-basis: 2.5vw;
+
+    span{
+        font-size: 12px;
+    }
+}
+
+.header-week-day{
+    text-align: right;
+    flex: 1;
+    //border: 1px solid green;;
+}

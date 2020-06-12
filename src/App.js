@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
 import List from './components/list-component';
+import Data from './components/data-component';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      todos: []
+      todos: ['Comer alguma coisa', 'andar de bike'],
     };
   }
 
-
   handleClick = () => {
     //not the best way
-    const input = document.querySelector(".form-control").value;
-      
+    const input = document.querySelector('.form-control').value;
+
     //copy current list of items
     const list = [...this.state.todos];
 
@@ -28,12 +28,16 @@ class App extends Component {
   handleDelete = (id) => {
     //copy current list of items
     const list = [...this.state.todos];
-
-  }
+  };
 
   render() {
     return (
       <div className="App">
+        <Data />
+
+        {/* Pass down the status into the List component */}
+        <List todos={this.state.todos} />
+
         {/* header adding a new item */}
         <div className="header-add">
           <input
@@ -45,9 +49,6 @@ class App extends Component {
             <i className="fas fa-plus"></i>
           </button>
         </div>
-
-        {/* Pass down the status into the List component */}
-        <List todos={this.state.todos} />
       </div>
     );
   }

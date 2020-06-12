@@ -8,7 +8,7 @@ const List = (props) => {
       {props.todos.map((todo, index) => (
         <li className={index % 2 === 0 ? 'item-even' : 'item-odd'} key={index}>
           {`${index + 1} - ${todo}`}
-          <button className="delete-btn">✗</button>
+          <button className="btn">✗</button>
         </li>
       ))}
     </ul>
