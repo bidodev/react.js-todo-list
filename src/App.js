@@ -14,11 +14,22 @@ class App extends Component {
   handleClick = () => {
     //not the best way
     const input = document.querySelector(".form-control").value;
-    const arr = this.state.todos.slice();
-    arr.push(input);
+      
+    //copy current list of items
+    const list = [...this.state.todos];
 
-    this.setState(() => ({ todos: arr }));
+    //insert the new item inside the list array
+    list.push(input);
+
+    //update state with the new list array
+    this.setState(() => ({ todos: list }));
   };
+
+  handleDelete = (id) => {
+    //copy current list of items
+    const list = [...this.state.todos];
+
+  }
 
   render() {
     return (
