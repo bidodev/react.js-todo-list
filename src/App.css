@@ -11,21 +11,6 @@
   align-items: center;
 
 }
-
-.list-items{
- 
-  list-style-type: none;
-  padding: 10px;
-}
-
-.item-even{
-  background-color: #f1f1f1;
-}
-
-.item-odd{
-  background-color: #fcfcfc;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;

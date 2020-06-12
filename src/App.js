@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
+import List from './components/list-component';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      input: '',
-      todos: [],
+      todos: []
     };
   }
 
-  handleChange =(e) =>{
-    this.setState({ input: e.target.value });
-  }
 
   handleClick = () => {
+    //not the best way
+    const input = document.querySelector(".form-control").value;
     const arr = this.state.todos.slice();
-    arr.push(this.state.input);
+    arr.push(input);
+
     this.setState(() => ({ todos: arr }));
   };
 
@@ -28,7 +28,6 @@ class App extends Component {
           <input
             className="form-control"
             type="text"
-            onChange={this.handleChange}
             placeholder="Type something..."
           ></input>
           <button onClick={this.handleClick} className="btn btn-default btn-lg">
@@ -36,17 +35,8 @@ class App extends Component {
           </button>
         </div>
 
-        {/* generate the list of items */}
-        <ul className="list-items">
-          {this.state.todos.map((todo, index) => (
-            <li
-              className={index % 2 === 0 ? 'item-even' : 'item-odd'}
-              key={index}
-            >
-              {`${index + 1} - ${todo}`}
-            </li>
-          ))}
-        </ul>
+        {/* Pass down the status into the List component */}
+        <List todos={this.state.todos} />
       </div>
     );
   }
