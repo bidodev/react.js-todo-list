@@ -3,7 +3,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //border: 1px solid red;
+    background-color: #f5f5f5;
+    padding: 0 10px;
 }
 
 .header-day{
@@ -25,5 +26,8 @@
 .header-week-day{
     text-align: right;
     flex: 1;
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: #606060;
     //border: 1px solid green;;
 }

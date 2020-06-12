@@ -5,7 +5,7 @@ const Data = () => {
   const generateData = () => {
     const data = {
       day: 12,
-      weekday: 'Tuesday',
+      weekday: 'Friday',
       month: 'Jun',
       year: "2020"
     };

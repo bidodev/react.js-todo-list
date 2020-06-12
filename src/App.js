@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      todos: ['Comer alguma coisa', 'andar de bike'],
+      todos: ['Improve my React.js skills', 'Look for new plants', "New features for my todo-list"],
     };
   }
 
@@ -25,7 +25,8 @@ class App extends Component {
     this.setState(() => ({ todos: list }));
   };
 
-  handleDelete = (id) => {
+  handleDelete = (event) => {
+    console.log(event.target)
     //copy current list of items
     const list = [...this.state.todos];
   };
