@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 > This is my first react project (No tutorial, no copy and paste)
 
 ##Previous
-[Imgur](https://i.imgur.com/y3jYuv6.png)
+(https://i.imgur.com/y3jYuv6.png)
 
 ## Available Scripts
 
