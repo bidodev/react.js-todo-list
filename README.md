@@ -1,10 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#TODOLIST
+# TODOLIST
 > This is my first react project (No tutorial, no copy and paste)
 
-##Previous
-(https://i.imgur.com/y3jYuv6.png)
+## Previous
+![previous](https://i.imgur.com/y3jYuv6.png)
 
 ## Available Scripts
 
