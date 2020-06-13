@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# TODOLIST
-> This is my first react project (No tutorial, no copy and paste)
+# todo-list
+> This is my first react project
 
 ## Previous
 ![previous](https://i.imgur.com/y3jYuv6.png)
