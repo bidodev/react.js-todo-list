@@ -3,11 +3,27 @@ import './data.styles.scss';
 
 const Data = () => {
   const generateData = () => {
+    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const monthNames = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    const currentDate = new Date();
     const data = {
-      day: 12,
-      weekday: 'Friday',
-      month: 'Jun',
-      year: "2020"
+      day: currentDate.getDate(),
+      weekday: days[currentDate.getDay()],
+      month: monthNames[currentDate.getMonth() + 1],
+      year: currentDate.getFullYear(),
     };
     return data;
   };
