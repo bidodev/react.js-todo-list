@@ -1,0 +1,17 @@
+{
+  /* <button className="btn" onClick={() => props.del}>
+✗
+</button> */
+}
+// className={index % 2 === 0 ? 'item-even' : 'item-odd'}
+
+
+      {this.props.todos.map((todo, index) => (
+        <li key={todo.id}>
+          {`${todo.id} - ${todo.desc}`}
+          <div>
+            <input type="checkbox" onChange={this.props.update}/>
+            <button className="btn" onClick={() => this.props.del(index)}>✗</button>
+          </div>
+        </li>
+      ))}
