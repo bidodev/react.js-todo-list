@@ -24,7 +24,7 @@ class App extends Component {
     this.textInput.current.value = '';
 
     const todos = [...this.state.todos, input];
-    this.setState({todos});
+    this.setState({ todos });
   };
 
   render() {
@@ -38,8 +38,10 @@ class App extends Component {
         {/* header adding a new item */}
         <div className="header-add">
           <form onSubmit={this.handleSubmit}>
-            <input type="text" ref={this.textInput} />
-            <input type="submit" value="Add" />
+            <input className="form-control" type="text" ref={this.textInput} />
+            <button className="btn">
+              <i className="fas fa-plus"></i>
+            </button>
           </form>
         </div>
       </div>
