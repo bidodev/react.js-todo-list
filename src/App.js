@@ -6,29 +6,25 @@ import Data from './components/data-component';
 class App extends Component {
   constructor() {
     super();
+    // Create the ref
+    this.textInput = React.createRef();
+
     this.state = {
-      todos: ['Improve my React.js skills', 'Look for new plants', "New features for my todo-list"],
+      todos: [
+        'Improve my React.js skills',
+        'Look for new plants',
+        'New features for my todo-list',
+      ],
     };
   }
 
-  handleClick = () => {
-    //not the best way
-    const input = document.querySelector('.form-control').value;
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const input = this.textInput.current.value;
+    this.textInput.current.value = '';
 
-    //copy current list of items
-    const list = [...this.state.todos];
-
-    //insert the new item inside the list array
-    list.push(input);
-
-    //update state with the new list array
-    this.setState(() => ({ todos: list }));
-  };
-
-  handleDelete = (event) => {
-    console.log(event.target)
-    //copy current list of items
-    const list = [...this.state.todos];
+    const todos = [...this.state.todos, input];
+    this.setState({todos});
   };
 
   render() {
@@ -41,14 +37,10 @@ class App extends Component {
 
         {/* header adding a new item */}
         <div className="header-add">
-          <input
-            className="form-control"
-            type="text"
-            placeholder="Type something..."
-          ></input>
-          <button onClick={this.handleClick} className="btn btn-default btn-lg">
-            <i className="fas fa-plus"></i>
-          </button>
+          <form onSubmit={this.handleSubmit}>
+            <input type="text" ref={this.textInput} />
+            <input type="submit" value="Add" />
+          </form>
         </div>
       </div>
     );

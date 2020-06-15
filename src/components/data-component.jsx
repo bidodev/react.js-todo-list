@@ -3,7 +3,16 @@ import './data.styles.scss';
 
 const Data = () => {
   const generateData = () => {
-    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const weekDays = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ];
+
     const monthNames = [
       'January',
       'February',
@@ -21,8 +30,8 @@ const Data = () => {
     const currentDate = new Date();
     const data = {
       day: currentDate.getDate(),
-      weekday: days[currentDate.getDay()],
-      month: monthNames[currentDate.getMonth() + 1],
+      weekday: weekDays[currentDate.getDay()],
+      month: monthNames[currentDate.getMonth()],
       year: currentDate.getFullYear(),
     };
     return data;
