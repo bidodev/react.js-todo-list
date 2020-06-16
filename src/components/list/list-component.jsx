@@ -5,12 +5,11 @@ import './list-component.styles.scss';
 
 export class TodoList extends Component {
 
-  
   render() {
     const { todos } = this.props;
     return (
       <ul className="list-items">
-        {todos.map(todo => <TodoItem key={todo.id} todo={todo}/>)}
+        {todos.map(todo => <TodoItem key={todo.id} todo={todo} handleComplete={this.props.handleComplete}/>)}
       </ul>
     );
   }

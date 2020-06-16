@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import TodoItem from './components/list/list-component';
+import TodoList from './components/list/list-component';
 import Data from './components/data/data-component';
 
 class App extends Component {
@@ -13,19 +13,19 @@ class App extends Component {
       todos: [
         {
           id: 1,
-          desc: "Do something cool to the world..",
+          desc: 'Do something cool to the world..',
           status: false,
         },
         {
           id: 2,
-          desc: "Take the Dog out for a walk",
+          desc: 'Take the Dog out for a walk',
           status: false,
         },
         {
           id: 3,
-          desc: "Meeting my friends",
+          desc: 'Meeting my friends',
           status: false,
-        }
+        },
       ],
     };
   }
@@ -35,14 +35,20 @@ class App extends Component {
     const task = this.textInput.current.value;
     this.textInput.current.value = '';
 
-    const todos = [...this.state.todos, {id: this.state.todos.length +1, desc: task, status: false}];
+    const todos = [...this.state.todos, { id: this.state.todos.length + 1, desc: task, status: false }];
     this.setState({ todos });
   };
 
-  
-  handleUpdate = id => {
-    console.log("Hello")
-  }
+  handleComplete = (id) => {
+    this.setState({
+      todos: this.state.todos.map((todo) => {
+        if (todo.id === id) {
+          todo.status = !todo.status;
+        }
+        return todo;
+      }),
+    });
+  };
 
   render() {
     return (
@@ -59,7 +65,7 @@ class App extends Component {
         </div>
 
         {/* Pass down the status into the List component */}
-        <TodoItem todos={this.state.todos} del={this.handleDelete} update={this.handleUpdate} />
+        <TodoList todos={this.state.todos} handleComplete={this.handleComplete} />
       </div>
     );
   }
