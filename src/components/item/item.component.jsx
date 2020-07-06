@@ -1,25 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class TodoItem extends Component {
-  changeStyles = () => {
-    if (this.props.todo.status === true) {
-      this.setState({ status: false });
-    }
-  };
+import './item.styles.scss'
 
-
-  render() {
-    const { id, desc } = this.props.todo;
+const TodoItem =({handleComplete, handleDelete, todo})=> {
+  const { id, desc, status } = todo;
+  
     return (
-      <li>
-        {`${id} - ${desc}`}
+      <li className={status ? 'done' : ''}>
+        {`${id + 1} - ${desc}`}
         <div>
-          <input type="checkbox" onChange={this.props.handleComplete.bind(this, id)} />
-          <button className="btn" onClick={() => this.props.del(id)}>✗</button>
+          <input type="checkbox" onChange={() => handleComplete(id)} />
+          <button className="btn" onClick={() => handleDelete(id)}>
+            ✗
+          </button>
         </div>
       </li>
     );
-  }
+  
 }
 
 export default TodoItem;

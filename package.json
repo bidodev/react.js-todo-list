@@ -2,7 +2,6 @@
   "name": "todo-list",
   "version": "0.1.0",
   "private": true,
-  "homepage": "react.js-todo-list",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",
     "@testing-library/jest-dom": "^4.2.4",
